@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+.center { text-align: center; }
+
+body { background-color: #F5EFDF; }
+
+        table, th, td {
+            border: 1px solid black;
+             padding: 5px;
+             border-collapse: separate;
+              border-spacing: 1px;
+              border-radius: 1px;
+             margin-left:auto;
+             margin-right:auto;
+            }
+         tr:nth-child(odd) {background-color: #fafdff;}
+         tr:nth-child(even) {background-color: #dae6ed;}
+
+a:hover {background: #2d2c7d; color: white}
+	
+.menu { text-align: center;  width: 60% } 
+
+.menuitem { text-align: center; width: 15% }
+
+.menupipe { width: 1% }
