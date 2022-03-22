@@ -1,1 +1,90 @@
-<p>register-page works!</p>
+<app-header></app-header>
+<form #registerForm="ngForm" (submit)="onFormSubmit()">
+    <div class="form-group">
+        <label for="">Email</label>
+        <input type="email" name="email" class="form-control" [(ngModel)]="userModel.email"
+        #email="ngModel" [class.is-invalid]="email.invalid && email.touched"
+        required pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b">
+        <div class="invalid-feedback" *ngIf="email.errors?.['required']">This is a required field.</div>
+        <div class="invalid-feedback" *ngIf="email.errors?.['pattern']">Please enter a valid email address.</div>
+    </div>
+
+    <div class="form-group">
+        <label for="">Password</label>
+        <input type="password" name="password" class="form-control" [(ngModel)]="userModel.password"
+        #password="ngModel" [class.is-invalid]="password.invalid && password.touched"
+        required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$">
+        <div class="invalid-feedback" *ngIf="password.errors?.['required']">This is a required field.</div>
+        <div class="invalid-feedback" *ngIf="password.errors?.['pattern']">Password must contain at least 8 characters, 1 uppercase letter, 1 lowercase letter, and 1 number.</div>
+    </div>
+
+    <div class="form-group">
+        <label for="">Title</label>
+        <select name="title" class="form-control" [(ngModel)]="userModel.title"
+        #title="ngModel" [class.is-invalid]="title.invalid && title.touched"
+        required>
+            <option selected disabled value=""></option>
+            <option value="Dr.">Dr.</option>
+            <option value="Mr.">Mr.</option>
+            <option value="Mrs.">Mrs.</option>
+            <option value="Ms.">Ms.</option>
+            <option value="Mx.">Mx.</option>
+        </select>
+        <div class="invalid-feedback" *ngIf="title.errors?.['required']">This is a required field.</div>
+    </div>
+
+    <div class="form-group">
+        <label for="">First Name</label>
+        <input type="text" name="firstName" class="form-control" [(ngModel)]="userModel.firstName"
+        #firstName="ngModel" [class.is-invalid]="firstName.invalid && firstName.touched"
+        required>
+        <div class="invalid-feedback" *ngIf="firstName.errors?.['required']">This is a required field.</div>
+    </div>
+
+    <div class="form-group">
+        <label for="">Last Name</label>
+        <input type="text" name="lastName" class="form-control" [(ngModel)]="userModel.lastName"
+        #lastName="ngModel" [class.is-invalid]="lastName.invalid && lastName.touched"
+        required>
+        <div class="invalid-feedback" *ngIf="lastName.errors?.['required']">This is a required field.</div>
+    </div>
+    
+    <div class="form-group">
+        <label for="">Phone Number</label>
+        <input type="text" name="phone" class="form-control" [(ngModel)]="userModel.phone"
+        #phone="ngModel" [class.is-invalid]="phone.invalid && phone.touched"
+        required pattern="^\d{10}$">
+        <div class="invalid-feedback" *ngIf="phone.errors?.['required']">This is a required field.</div>
+        <div class="invalid-feedback" *ngIf="phone.errors?.['pattern']">Phone number should be 10 digits.</div>
+    </div>
+
+    <div class="form-group">
+        <label for="">Address</label>
+        <input type="text" name="address" class="form-control" [(ngModel)]="userModel.address"
+        #address="ngModel" [class.is-invalid]="address.invalid && address.touched"
+        required>
+        <div class="invalid-feedback" *ngIf="address.errors?.['required']">This is a required field.</div>
+    </div>
+
+    <div class="form-group">
+        <label for="">State</label>
+        <select name="state" class="form-control" [(ngModel)]="userModel.state"
+        #state="ngModel" [class.is-invalid]="state.invalid && state.touched"
+        required>
+            <option selected disabled value=""></option>
+            <option *ngFor="let state of states">{{ state }}</option>
+        </select>
+        <div class="invalid-feedback" *ngIf="state.errors?.['required']">This is a required field.</div>
+    </div>
+
+    <div class="form-group">
+        <label for="">Zip Code</label>
+        <input type="text" name="zip" class="form-control" [(ngModel)]="userModel.zip"
+        #zip="ngModel" [class.is-invalid]="zip.invalid && zip.touched"
+        required pattern="^\d{5}$">
+        <div class="invalid-feedback" *ngIf="zip.errors?.['required']">This is a required field.</div>
+        <div class="invalid-feedback" *ngIf="zip.errors?.['pattern']">Zip code should be 5 digits.</div>
+    </div>
+
+    <input [disabled]="registerForm.invalid" type="submit" value="Register" class="btn btn-primary">
+</form>
