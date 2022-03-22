@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuitemComponent } from '../components/menuitem/menuitem.component';
 import { CheckoutComponent } from '../components/checkout/checkout.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from '../components/header/header.component';
 
 @NgModule({
   declarations: [
