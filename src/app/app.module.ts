@@ -10,6 +10,11 @@ import { MenuitemComponent } from './components/menuitem/menuitem.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
+import { MenuPageComponent } from './components/menu-page/menu-page.component';
+import { CheckoutPageComponent } from './components/checkout-page/checkout-page.component';
+import { ReservationPageComponent } from './components/reservation-page/reservation-page.component';
+import { RegisterPageComponent } from './components/register-page/register-page.component';
+import { LoginPageComponent } from './components/login-page/login-page.component';
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
@@ -22,7 +27,12 @@ FullCalendarModule.registerPlugins([
     MenuitemComponent,
     CheckoutComponent,
     HeaderComponent,
-    HomePageComponent
+    HomePageComponent,
+    MenuPageComponent,
+    CheckoutPageComponent,
+    ReservationPageComponent,
+    RegisterPageComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
