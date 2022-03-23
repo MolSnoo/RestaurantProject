@@ -16,6 +16,7 @@ import { CheckoutPageComponent } from './components/checkout-page/checkout-page.
 import { ReservationPageComponent } from './components/reservation-page/reservation-page.component';
 import { RegisterPageComponent } from './components/register-page/register-page.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
+import { MenuItemComponent } from './components/menu-item/menu-item.component';
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
@@ -33,7 +34,8 @@ FullCalendarModule.registerPlugins([
     CheckoutPageComponent,
     ReservationPageComponent,
     RegisterPageComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    MenuItemComponent
   ],
   imports: [
     BrowserModule,
