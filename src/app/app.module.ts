@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
@@ -18,6 +19,7 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 import { MenuItemComponent } from './components/menu-item/menu-item.component';
 
 import { DataService } from './services/data.service';
+import { MenuItemsComponent } from './components/menu-items/menu-items.component';
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
@@ -35,12 +37,14 @@ FullCalendarModule.registerPlugins([
     ReservationPageComponent,
     RegisterPageComponent,
     LoginPageComponent,
-    MenuItemComponent
+    MenuItemComponent,
+    MenuItemsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     FullCalendarModule
   ],
   providers: [DataService],

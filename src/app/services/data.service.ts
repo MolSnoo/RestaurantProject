@@ -17,6 +17,10 @@ export class DataService {
     return this.http.get<any>('http://apolis-grocery.herokuapp.com/api/subcategory/' + catId);
   }
 
+  getProducts(): Observable<any> {
+      return this.http.get<any>('http://apolis-grocery.herokuapp.com/api/products');
+  }
+
   getProductByCatId(catId: any): Observable<any> {
     return this.http.get<any>('http://apolis-grocery.herokuapp.com/api/products/cat/' + catId);
   }

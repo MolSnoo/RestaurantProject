@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterPageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'menu', component: MenuPageComponent },
+  { path: 'menu/:catId', component: MenuPageComponent },
   { path: 'reserve', component: ReservationPageComponent },
   { path: 'checkout', component: CheckoutPageComponent }
 ];
