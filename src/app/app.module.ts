@@ -12,14 +12,13 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { MenuPageComponent } from './components/menu-page/menu-page.component';
+import { MenuItemsComponent } from './components/menu-items/menu-items.component';
 import { CheckoutPageComponent } from './components/checkout-page/checkout-page.component';
 import { ReservationPageComponent } from './components/reservation-page/reservation-page.component';
 import { RegisterPageComponent } from './components/register-page/register-page.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
-import { MenuItemComponent } from './components/menu-item/menu-item.component';
 
 import { DataService } from './services/data.service';
-import { MenuItemsComponent } from './components/menu-items/menu-items.component';
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
@@ -33,12 +32,11 @@ FullCalendarModule.registerPlugins([
     HeaderComponent,
     HomePageComponent,
     MenuPageComponent,
+    MenuItemsComponent,
     CheckoutPageComponent,
     ReservationPageComponent,
     RegisterPageComponent,
-    LoginPageComponent,
-    MenuItemComponent,
-    MenuItemsComponent
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
