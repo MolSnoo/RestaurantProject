@@ -1,1 +1,20 @@
-<router-outlet></router-outlet>
+<div class="container">
+    
+    <!-- <a routerLink="/menu-page" class="btn btn-primary">Menu Page</a>
+    <a routerLink="/home-page" class="btn btn-primary">Home Page</a> -->
+
+    <!-- this should be moved once login is implemented, it isn't needed on the login page-->
+    <div class="container">
+        <header class="d-flex justify-content-center py-3">
+          <ul class="nav nav-pills">
+            <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Menu</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Reserve</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Checkout</a></li>
+          </ul>
+        </header>
+      </div>
+    
+    <router-outlet></router-outlet>
+    
+</div>
