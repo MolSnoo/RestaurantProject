@@ -1,6 +1,26 @@
 <div style="width: 50%; margin: auto;">
-    <full-calendar></full-calendar>
-    <div class="form-floating">
-        <select name="input_2" id="input_11_2" class="medium gfield_select" aria-invalid="false"><option value="">Party Size</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option></select>
-    </div>
+    <full-calendar [options]="calendarOptions" [deepChangeDetection]="true"></full-calendar>
+    <form #reservationForm="ngForm" (submit)="onFormSubmit()">
+        <div class="form-group">
+            <input type="time" name="time" class="form-control" style="width: 150px; " [(ngModel)]="reservationModel.time"
+            #time="ngModel" [class.is-invalid]="time.invalid && time.touched" 
+            min="11:00" max="21:00" required>
+        </div>
+        <div class="form-group">
+            <select name="party" class="form-control medium gfield_select" style="width: 150px;" [(ngModel)]="reservationModel.seats"
+            #party="ngModel" [class.is-invalid]="party.invalid && party.touched"
+            required>
+                <option selected disabled>Party Size</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select>
+        </div>
+        <input [disabled]="reservationForm.invalid" class="align-items-center" type="submit" value="Reserve" class="btn btn-primary">
+    </form>
+    
 </div>
