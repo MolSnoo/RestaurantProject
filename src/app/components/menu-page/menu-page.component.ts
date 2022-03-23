@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-menu-page',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuPageComponent implements OnInit {
 
-  constructor() { }
+  products: any[] = [];
+
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+    this.dataService.getProductByCatId(1).subscribe(data => {
+      this.products = data.data;
+    });
   }
 
 }

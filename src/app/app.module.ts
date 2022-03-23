@@ -17,6 +17,8 @@ import { RegisterPageComponent } from './components/register-page/register-page.
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { MenuItemComponent } from './components/menu-item/menu-item.component';
 
+import { DataService } from './services/data.service';
+
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
   interactionPlugin
@@ -41,7 +43,7 @@ FullCalendarModule.registerPlugins([
     FormsModule,
     FullCalendarModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
