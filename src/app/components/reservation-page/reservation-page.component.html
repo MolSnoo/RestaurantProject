@@ -3,11 +3,13 @@
     <br>
     <form #reservationForm="ngForm" (submit)="onFormSubmit()">
         <div class="form-group" class="centerflex">
+            <p>Time:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
             <input type="time" name="time" class="form-control" style="width: 150px; " [(ngModel)]="reservationModel.time"
             #time="ngModel" [class.is-invalid]="time.invalid && time.touched" 
             min="11:00" max="21:00" required>
         </div>
         <div class="form-group" class="centerflex">
+            <p>Party size:&nbsp;&nbsp;</p>
             <select name="party" class="form-control medium gfield_select" style="width: 150px;" [(ngModel)]="reservationModel.seats"
             #party="ngModel" [class.is-invalid]="party.invalid && party.touched"
             required>
