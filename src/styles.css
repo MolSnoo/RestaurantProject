@@ -14,10 +14,23 @@ body { background-color: #cde7cf; }
          tr:nth-child(odd) {background-color: #fafdff;}
          tr:nth-child(even) {background-color: #dae6ed;}
 
-a:hover {background: #2d2c7d; color: white}
+a:hover {background: #6f6ecc; color: rgb(255, 255, 255)}
 	
 .menu { text-align: center;  width: 60% } 
 
 .menuitem { text-align: center; width: 15% }
 
 .menupipe { width: 1% }
+
+.nav-item > .active > a { 
+    background-color: rgb(97, 224, 193) ; 
+}
+
+.active { 
+    background-color: rgb(97, 224, 193) ; 
+}
+
+.active, .btn:hover {
+    background-color: #666;
+    color: white;
+}

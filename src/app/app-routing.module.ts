@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'menu', component: MenuPageComponent },
   { path: 'menu/:catId', component: MenuPageComponent },
   { path: 'reserve', component: ReservationPageComponent },
-  { path: 'checkout', component: CheckoutPageComponent }
+  { path: 'checkout', component: CheckoutPageComponent  }
 ];
 
 @NgModule({
