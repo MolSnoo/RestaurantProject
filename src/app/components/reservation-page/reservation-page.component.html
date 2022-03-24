@@ -1,12 +1,13 @@
 <div style="width: 50%; margin: auto;">
     <full-calendar [options]="calendarOptions" [deepChangeDetection]="true"></full-calendar>
+    <br>
     <form #reservationForm="ngForm" (submit)="onFormSubmit()">
-        <div class="form-group">
+        <div class="form-group" class="centerflex">
             <input type="time" name="time" class="form-control" style="width: 150px; " [(ngModel)]="reservationModel.time"
             #time="ngModel" [class.is-invalid]="time.invalid && time.touched" 
             min="11:00" max="21:00" required>
         </div>
-        <div class="form-group">
+        <div class="form-group" class="centerflex">
             <select name="party" class="form-control medium gfield_select" style="width: 150px;" [(ngModel)]="reservationModel.seats"
             #party="ngModel" [class.is-invalid]="party.invalid && party.touched"
             required>
@@ -20,7 +21,10 @@
                 <option value="7">7</option>
             </select>
         </div>
+        <br>
+        <div class="centerflex">
         <input [disabled]="reservationForm.invalid" class="align-items-center" type="submit" value="Reserve" class="btn btn-primary">
+        </div>
     </form>
     
 </div>

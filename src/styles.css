@@ -30,7 +30,7 @@ a:hover {background: #6f6ecc; color: rgb(255, 255, 255)}
     background-color: rgb(97, 224, 193) ; 
 }
 
-.active, .btn:hover {
-    background-color: #666;
-    color: white;
-}
+.centerflex {
+    display: flex;
+    justify-content: center;
+  }
