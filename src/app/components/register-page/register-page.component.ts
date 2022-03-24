@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'src/app/classes/user';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-register-page',
@@ -63,13 +65,14 @@ export class RegisterPageComponent implements OnInit {
 
   userModel = new User("", "", "", "", "", null, "", "", null);
 
-  constructor() { }
+  constructor(private router: Router, private userService: UserService) { }
 
   ngOnInit(): void {
   }
 
   onFormSubmit() {
     console.log(this.userModel);
+    this.userService.addUser(this.userModel).subscribe(response => { this.router.navigate(['/login'])});
   }
 
 }
