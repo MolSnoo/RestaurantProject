@@ -1,25 +1,31 @@
 <main class="form-signin">
-    <form>
-      <!-- <img class="mb-4" src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
-      <h1 class="h3 mb-3 fw-normal" class="d-flex justify-content-center py-3"> Login</h1>
-  
-      <div class="form-floating">
-        <label for="floatingInput" class="d-flex justify-content-center py-3" >Email address</label>
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b">
-      </div>
-      <div class="form-floating">
-        <label for="floatingPassword" class="d-flex justify-content-center py-3" >Password</label>
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-      </div>
-      <br>
-      <div class="centerflex">
-        <button class="w-10 btn btn-lg btn-primary" type="submit">Sign in</button>
-      </div>
-      <br>
-      <br>
-      <div class="centerflex" >
-        <button class="w-10 btn btn-lg btn-primary"><a href="/register" class="nav-link" style="color:white" >Registration Page</a></button>
-      </div>
+  <form>
+    <h1 class="h3 mb-3 fw-normal" class="d-flex justify-content-center py-3"> Login</h1>
+    <form #loginForm="ngForm" (submit)="onFormSubmit()">
+    <div class="form-floating">
+      <label for="floatingInput" class="d-flex justify-content-center py-3" >Email address</label>
+      <input type="email" class="form-control" name="emailinput" id="floatingInput" placeholder="name@example.com" [(ngModel)]="emailinput" required pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b">
+    </div>
+    <div class="form-floating">
+      <label for="floatingPassword" class="d-flex justify-content-center py-3" >Password</label>
+      <input type="password" class="form-control" name="passinput" id="floatingPassword" [(ngModel)]="passinput" placeholder="Password">
+    </div>
 
+    <br>
+    <div class="centerflex">
+      <!-- If an email is entered that is not an email, the sign in button is disabled -->
+      <input [disabled]="loginForm.invalid" type="submit" value="Sign in" class="w-10 btn btn-lg btn-primary">
+    </div>
+    <br>
+    <div class="centerflex" >
+      <button class="w-10 btn btn-lg btn-primary"><a routerLink="/register" class="nav-link" style="color:white" >Registration Page</a></button>
+    </div>
+    <br>
+    <!-- shortcut to homepage -->
+    <!-- <div class="centerflex">
+      <button class="w-10 btn btn-lg btn-primary" type="submit"><a routerLink="/" class="nav-link" style="color:white">Sign in</a></button>
+    </div> -->
     </form>
-  </main>
+
+  </form>
+</main>

@@ -20,6 +20,7 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 
 import { DataService } from './services/data.service';
 import { UserService } from './services/user.service';
+//import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
