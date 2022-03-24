@@ -20,6 +20,7 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 
 import { DataService } from './services/data.service';
 import { UserService } from './services/user.service';
+import { ReservationService } from './services/reservation.service';
 //import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 FullCalendarModule.registerPlugins([
@@ -47,7 +48,7 @@ FullCalendarModule.registerPlugins([
     HttpClientModule,
     FullCalendarModule
   ],
-  providers: [DataService, UserService],
+  providers: [DataService, UserService, ReservationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

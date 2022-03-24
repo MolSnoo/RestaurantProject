@@ -71,7 +71,6 @@ export class RegisterPageComponent implements OnInit {
   }
 
   onFormSubmit() {
-    console.log(this.userModel);
     this.userService.addUser(this.userModel).subscribe(response => { this.router.navigate(['/login'])});
   }
 
