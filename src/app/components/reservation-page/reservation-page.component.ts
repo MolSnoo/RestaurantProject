@@ -16,7 +16,7 @@ export class ReservationPageComponent implements OnInit {
     events: this.events
   };
 
-  reservationModel = new Reservation("", "", null);
+  reservationModel = new Reservation("", "", "", 1, 0);
 
   constructor() { }
 
@@ -24,7 +24,7 @@ export class ReservationPageComponent implements OnInit {
   }
 
   handleDateClick(arg: any) {
-    this.reservationModel.date = arg.dateStr;
+    this.reservationModel.start = arg.dateStr;
     this.events.push({ title: 'reservation', date: arg.dateStr });
   }
 

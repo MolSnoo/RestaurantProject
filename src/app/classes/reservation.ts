@@ -1,8 +1,10 @@
 export class Reservation {
     constructor(
-        public date: string,
-        public time: string,
-        public seats: number | null
+        public title: string,
+        public start: string,
+        public end: string,
+        public seats: number,
+        public userId: number
     ) {
 
     }

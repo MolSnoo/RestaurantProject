@@ -17,6 +17,11 @@ public class UserController {
     return userService.getAllUsers();
   }
 
+  @GetMapping("/users/{id}")
+  public User getUserById(@PathVariable("id") Long id) {
+    return userService.getUserById(id);
+  }
+
   @GetMapping("/login")
   public User getUserByCredentials(@RequestParam String email, @RequestParam String password) {
     return userService.getUserByCredentials(email, password);

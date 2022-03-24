@@ -18,6 +18,11 @@ public class UserServiceImpl implements UserService {
   }
 
   @Override
+  public User getUserById(Long id) {
+    return repository.getById(id);
+  }
+
+  @Override
   public User getUserByCredentials(String email, String password) {
     return repository.findByEmailAndPassword(email, password);
   }

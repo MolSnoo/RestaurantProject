@@ -4,7 +4,7 @@
     <form #reservationForm="ngForm" (submit)="onFormSubmit()">
         <div class="form-group" class="centerflex">
             <p>Time:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-            <input type="time" name="time" class="form-control" style="width: 150px; " [(ngModel)]="reservationModel.time"
+            <input type="time" name="time" class="form-control" style="width: 150px; " [(ngModel)]="reservationModel.start"
             #time="ngModel" [class.is-invalid]="time.invalid && time.touched" 
             min="11:00" max="21:00" required>
         </div>
@@ -13,7 +13,6 @@
             <select name="party" class="form-control medium gfield_select" style="width: 150px;" [(ngModel)]="reservationModel.seats"
             #party="ngModel" [class.is-invalid]="party.invalid && party.touched"
             required>
-                <option selected disabled>Party Size</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
