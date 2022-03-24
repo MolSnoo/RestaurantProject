@@ -1,5 +1,7 @@
 # RestaurantProject
 
+An Angular + Spring Project made as a training exercise at Revature.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
 
 ## Development server
