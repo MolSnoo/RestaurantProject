@@ -23,8 +23,7 @@ For the Angular part, run `ng serve` for a dev server. Navigate to `http://local
 
 ## Contributers
 
-Vivian Anderson
-Michael Butera
+Vivian Anderson, Michael Butera
 
 ## License
 
