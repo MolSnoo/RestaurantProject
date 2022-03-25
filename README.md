@@ -3,13 +3,16 @@
 The Restaurant Reservation System allows a user to make a table reservation at a restaurant online with a web application. This web app includes a menu of food sold by the restaurant, a home page, and a reservation page with which a user can reserve a table with a variable party size, at a time and day of their choosing. This project is built with Angular for the frontend, and Spring for the backend. 
 
 ## Technologies Used
-
-• Angular
-• Spring
+- Angular
+- Spring
 
 ## Features
 
-A user can: • Register a new account. • Login. • Reserve a table at a specific time and day. • View the restaurant's menu, with entries filled in by an API. 
+A user can:
+- Register a new account.
+- Login.
+- Reserve a table at a specific time and day.
+- View the restaurant's menu, with entries filled in by an API. 
 
 ## Getting Started
 
