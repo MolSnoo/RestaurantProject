@@ -1,29 +1,32 @@
 # RestaurantProject
 
-An Angular + Spring Project made as a training exercise at Revature.
+The Restaurant Reservation System allows a user to make a table reservation at a restaurant online with a web application. This web app includes a menu of food sold by the restaurant, a home page, and a reservation page with which a user can reserve a table with a variable party size, at a time and day of their choosing. This project is built with Angular for the frontend, and Spring for the backend. 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
+## Technologies Used
 
-## Development server
+• Angular
+• Spring
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+A user can: • Register a new account. • Login. • Reserve a table at a specific time and day. • View the restaurant's menu, with entries filled in by an API. 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Getting Started
 
-## Build
+Open the source folder in your IDE of choice to run the Angular project.
+Open the restaurant-project subfolder within the root folder in your Java IDE of choice to run the Spring project.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Usage
 
-## Running unit tests
+With your JAVA IDE of choice, run the Spring project.
+For the Angular part, run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Contributers
 
-## Running end-to-end tests
+Vivian Anderson
+Michael Butera
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## License
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Apache License, Version 2.0
+https://opensource.org/licenses/Apache-2.0
