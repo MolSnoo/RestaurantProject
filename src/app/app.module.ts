@@ -8,12 +8,10 @@ import interactionPlugin from '@fullcalendar/interaction';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CheckoutComponent } from './components/checkout/checkout.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { MenuPageComponent } from './components/menu-page/menu-page.component';
 import { MenuItemsComponent } from './components/menu-items/menu-items.component';
-import { CheckoutPageComponent } from './components/checkout-page/checkout-page.component';
 import { ReservationPageComponent } from './components/reservation-page/reservation-page.component';
 import { RegisterPageComponent } from './components/register-page/register-page.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
@@ -31,12 +29,10 @@ FullCalendarModule.registerPlugins([
 @NgModule({
   declarations: [
     AppComponent,
-    CheckoutComponent,
     HeaderComponent,
     HomePageComponent,
     MenuPageComponent,
     MenuItemsComponent,
-    CheckoutPageComponent,
     ReservationPageComponent,
     RegisterPageComponent,
     LoginPageComponent

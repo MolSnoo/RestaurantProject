@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CheckoutPageComponent } from './components/checkout-page/checkout-page.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { MenuPageComponent } from './components/menu-page/menu-page.component';
@@ -13,8 +12,7 @@ const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
   { path: 'menu', component: MenuPageComponent },
   { path: 'menu/:catId', component: MenuPageComponent },
-  { path: 'reserve', component: ReservationPageComponent },
-  { path: 'checkout', component: CheckoutPageComponent  }
+  { path: 'reserve', component: ReservationPageComponent }
 ];
 
 @NgModule({
