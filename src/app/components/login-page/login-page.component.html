@@ -4,11 +4,18 @@
     <form #loginForm="ngForm" (submit)="onFormSubmit()">
     <div class="form-floating">
       <label for="floatingInput" class="d-flex justify-content-center py-3" >Email address</label>
-      <input type="email" class="form-control" name="emailinput" id="floatingInput" placeholder="name@example.com" [(ngModel)]="emailinput" required pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b">
+      <input type="email" class="form-control" name="email" placeholder="name@example.com" [(ngModel)]="userModel.email"
+      #email="ngModel" [class.is-invalid]="email.invalid && email.touched"
+      required pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b">
+      <div class="invalid-feedback" *ngIf="email.errors?.['required']">This is a required field.</div>
+        <div class="invalid-feedback" *ngIf="email.errors?.['pattern']">Please enter a valid email address.</div>
     </div>
     <div class="form-floating">
       <label for="floatingPassword" class="d-flex justify-content-center py-3" >Password</label>
-      <input type="password" class="form-control" name="passinput" id="floatingPassword" [(ngModel)]="passinput" placeholder="Password">
+      <input type="password" class="form-control" name="passinput" placeholder="Password" [(ngModel)]="userModel.password"
+      #password="ngModel" [class.is-invalid]="password.invalid && password.touched"
+      required>
+      <div class="invalid-feedback" *ngIf="password.errors?.['required']">This is a required field.</div>
     </div>
 
     <br>

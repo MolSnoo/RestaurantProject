@@ -15,15 +15,20 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  emailinput: string = '';
-  passinput: string = '';
-
-  userModel = new User(this.emailinput, this.passinput, "", "", "", null, "", "", null);
+  userModel = new User("", "", "", "", "", null, "", "", null);
 
   onFormSubmit() {
-
-    console.log(this.userModel);
-    this.userService.loginUser(this.userModel).subscribe(response => { this.router.navigate(['/'])});
+    this.userService.loginUser(this.userModel).subscribe(
+      response => {
+        // Successfully logged into a user account.
+        if (response !== null) {
+          this.router.navigate(['/'])
+        }
+        // Failed to find a user account.
+        else {
+          // TODO: Show an error message
+        }
+      }
+    );
   }
-
 }
