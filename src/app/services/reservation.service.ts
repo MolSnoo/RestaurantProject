@@ -17,4 +17,8 @@ export class ReservationService {
   addReservation(reservation: Reservation): Observable<Reservation> {
     return this.http.post<Reservation>('http://localhost:9000/reservations', reservation);
   }
+
+  deleteReservation(id: number): Observable<string> {
+    return this.http.delete('http://localhost:9000/reservations/' + id, { responseType: "text" });
+  }
 }

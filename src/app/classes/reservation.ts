@@ -4,7 +4,8 @@ export class Reservation {
         public start: string,
         public end: string,
         public seats: number,
-        public userId: number
+        public userId: number,
+        public id?: number
     ) {
 
     }

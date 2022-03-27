@@ -28,7 +28,8 @@ public class ReservationServiceImpl implements ReservationService {
   }
 
   @Override
-  public void deleteReservation(Long reservationId) {
+  public String deleteReservation(Long reservationId) {
     reservationRepository.deleteById(reservationId);
+    return "Successfully deleted reservation";
   }
 }
