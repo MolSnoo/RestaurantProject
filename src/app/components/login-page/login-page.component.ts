@@ -26,7 +26,6 @@ export class LoginPageComponent implements OnInit {
         if (response !== null && response.userId) {
           sessionStorage.setItem('loggedIn', 'true');
           sessionStorage.setItem('user', response.userId.toString());
-          console.log(sessionStorage.getItem('user'));
           this.router.navigate(['/'])
         }
         // Failed to find a user account.
