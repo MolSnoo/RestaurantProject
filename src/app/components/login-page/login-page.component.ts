@@ -15,7 +15,7 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  userModel = new User("", "", "", "", "", null, "", "", null, 0);
+  userModel = new User("", "", "", "", "", null, "", "", null);
 
   display = false;
 
