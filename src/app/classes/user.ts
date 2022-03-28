@@ -9,7 +9,7 @@ export class User {
         public address: string,
         public state: string,
         public zip: number | null,
-        public id?: number
+        public userId?: number
     ) {
 
     }

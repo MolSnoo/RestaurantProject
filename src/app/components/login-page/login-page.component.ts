@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/classes/user';
 import { UserService } from 'src/app/services/user.service';
-import { HttpClient, HttpParams } from "@angular/common/http";
 
 @Component({
   selector: 'app-login-page',
@@ -24,9 +23,10 @@ export class LoginPageComponent implements OnInit {
     this.userService.loginUser(this.userModel).subscribe(
       response => {
         // Successfully logged into a user account.
-        if (response !== null) {
+        if (response !== null && response.userId) {
           sessionStorage.setItem('loggedIn', 'true');
-          sessionStorage.setItem('user', response.id?.toString());
+          sessionStorage.setItem('user', response.userId.toString());
+          console.log(sessionStorage.getItem('user'));
           this.router.navigate(['/'])
         }
         // Failed to find a user account.
