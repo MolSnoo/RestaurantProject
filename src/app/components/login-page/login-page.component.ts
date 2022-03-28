@@ -25,13 +25,8 @@ export class LoginPageComponent implements OnInit {
       response => {
         // Successfully logged into a user account.
         if (response !== null) {
-          // java code from p1 of what we want here
-          // HttpSession session = request.getSession();
-          // session.setAttribute("user_id", user.getId());
-          // session.setAttribute("user_name", user.getName());
-
-          // this.http.post<User>('http://localhost:9000/login', {withCredentials : true});
           sessionStorage.setItem('loggedIn', 'true');
+          //sessionStorage.setItem('user', response.id);
           this.router.navigate(['/'])
         }
         // Failed to find a user account.

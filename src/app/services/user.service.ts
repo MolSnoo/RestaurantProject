@@ -21,12 +21,15 @@ export class UserService {
         params = params.append('email', user.email);
         params = params.append('password', user.password);
         //this.loggedInStatus = true;
-        //localStorage.setItem('loggedIn', 'true');
+        sessionStorage.setItem('user', user.email);
         return this.http.get<User>(`http://localhost:9000/login`, { params : params });
     }
 
     get isLoggedin() {
         return sessionStorage.getItem('loggedIn');
-        //return JSON.parse(localStorage.getItem('loggedIn') || this.loggedInStatus.toString());
+    }
+
+    get loggedInUser() {
+        return sessionStorage.getItem('user');
     }
 }
