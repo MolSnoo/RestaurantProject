@@ -4,11 +4,9 @@ import { Observable } from "rxjs";
 import { User } from "../classes/user";
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class UserService {
-
-    //private loggedInStatus = JSON.parse(localStorage.getItem('loggedIn') || 'false');
 
     constructor(private http: HttpClient) { }
 
@@ -20,8 +18,6 @@ export class UserService {
         let params = new HttpParams();
         params = params.append('email', user.email);
         params = params.append('password', user.password);
-        //this.loggedInStatus = true;
-        //sessionStorage.setItem('user', user.email);
         return this.http.get<User>(`http://localhost:9000/login`, { params : params });
     }
 

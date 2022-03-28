@@ -24,17 +24,22 @@ export class ReservationPageComponent implements OnInit {
   constructor(private reservationService: ReservationService) { }
 
   ngOnInit(): void {
-    this.reservationService.getReservations(1).subscribe(reservations => {
-      for (let reservation of reservations) {
-        this.events.push({
-          id: reservation.id,
-          title: reservation.title,
-          start: reservation.start,
-          end: reservation.end
-        });
-      }
-      this.events.push({ id: -1 });
-    });
+    let userId = sessionStorage.getItem("user");
+    if (userId !== null) {
+      let userIdInt = parseInt(userId);
+      this.reservationModel.userId = userIdInt;
+      this.reservationService.getReservations(this.reservationModel.userId).subscribe(reservations => {
+        for (let reservation of reservations) {
+          this.events.push({
+            id: reservation.id,
+            title: reservation.title,
+            start: reservation.start,
+            end: reservation.end
+          });
+        }
+        this.events.push({ id: -1 });
+      });
+    }
   }
 
   handleDateClick(arg: any) {
@@ -68,7 +73,6 @@ export class ReservationPageComponent implements OnInit {
     this.reservationModel.title = "Reservation for " + this.reservationModel.seats;
     this.reservationModel.start = start;
     this.reservationModel.end = end;
-    this.reservationModel.userId = 1;
 
     this.reservationService.addReservation(this.reservationModel).subscribe(response => {
       this.events.splice(this.events.length - 1, 1, {
