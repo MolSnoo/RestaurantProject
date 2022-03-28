@@ -63,7 +63,7 @@ export class RegisterPageComponent implements OnInit {
     "Wyoming"
   ];
 
-  userModel = new User("", "", "", "", "", null, "", "", null);
+  userModel = new User("", "", "", "", "", null, "", "", null, 0);
 
   constructor(private router: Router, private userService: UserService) { }
 

@@ -16,7 +16,7 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  userModel = new User("", "", "", "", "", null, "", "", null);
+  userModel = new User("", "", "", "", "", null, "", "", null, 0);
 
   display = false;
 
@@ -26,7 +26,7 @@ export class LoginPageComponent implements OnInit {
         // Successfully logged into a user account.
         if (response !== null) {
           sessionStorage.setItem('loggedIn', 'true');
-          //sessionStorage.setItem('user', response.id);
+          sessionStorage.setItem('user', response.id?.toString());
           this.router.navigate(['/'])
         }
         // Failed to find a user account.

@@ -8,7 +8,8 @@ export class User {
         public phone: number | null,
         public address: string,
         public state: string,
-        public zip: number | null
+        public zip: number | null,
+        public id?: number
     ) {
 
     }

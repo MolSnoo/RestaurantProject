@@ -21,7 +21,7 @@ export class UserService {
         params = params.append('email', user.email);
         params = params.append('password', user.password);
         //this.loggedInStatus = true;
-        sessionStorage.setItem('user', user.email);
+        //sessionStorage.setItem('user', user.email);
         return this.http.get<User>(`http://localhost:9000/login`, { params : params });
     }
 
