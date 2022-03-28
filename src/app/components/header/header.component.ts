@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  //loggedIn = user.service.isLoggedin()
   selected = true;
   collapsed = false;
   toggleCollapsed(): void {

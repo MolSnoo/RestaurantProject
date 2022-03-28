@@ -8,6 +8,8 @@ import { User } from "../classes/user";
 })
 export class UserService {
 
+    //private loggedInStatus = JSON.parse(localStorage.getItem('loggedIn') || 'false');
+
     constructor(private http: HttpClient) { }
 
     addUser(user: User): Observable<User> {
@@ -18,6 +20,13 @@ export class UserService {
         let params = new HttpParams();
         params = params.append('email', user.email);
         params = params.append('password', user.password);
+        //this.loggedInStatus = true;
+        //localStorage.setItem('loggedIn', 'true');
         return this.http.get<User>(`http://localhost:9000/login`, { params : params });
+    }
+
+    get isLoggedin() {
+        return sessionStorage.getItem('loggedIn');
+        //return JSON.parse(localStorage.getItem('loggedIn') || this.loggedInStatus.toString());
     }
 }

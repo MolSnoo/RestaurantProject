@@ -1,8 +1,8 @@
-import { HtmlParser } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/classes/user';
 import { UserService } from 'src/app/services/user.service';
+import { HttpClient, HttpParams } from "@angular/common/http";
 
 @Component({
   selector: 'app-login-page',
@@ -25,13 +25,18 @@ export class LoginPageComponent implements OnInit {
       response => {
         // Successfully logged into a user account.
         if (response !== null) {
+          // java code from p1 of what we want here
+          // HttpSession session = request.getSession();
+          // session.setAttribute("user_id", user.getId());
+          // session.setAttribute("user_name", user.getName());
+
+          // this.http.post<User>('http://localhost:9000/login', {withCredentials : true});
+          sessionStorage.setItem('loggedIn', 'true');
           this.router.navigate(['/'])
         }
         // Failed to find a user account.
         else {
           this.display = true;
-          //innerHtml("<span style=\"color:red\">Incorrect email or password.</span>");
-          //<span style=\"color:red\ ">Incorrect email or password.</span>;
         }
       }
     );
