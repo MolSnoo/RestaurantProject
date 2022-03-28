@@ -45,8 +45,12 @@ export class ReservationPageComponent implements OnInit {
   }
 
   handleDateClick(arg: any) {
-    this.date = arg.dateStr;
-    this.events.splice(this.events.length - 1, 1, { id: -1, title: 'reservation', date: arg.dateStr });
+    let date = new Date(arg.dateStr);
+    // Don't let user make reservations before the current date
+    if (date >= new Date()) {
+      this.date = arg.dateStr;
+      this.events.splice(this.events.length - 1, 1, { id: -1, title: 'reservation', date: arg.dateStr });
+    }
   }
 
   handleEventClick(arg: any) {
@@ -72,7 +76,7 @@ export class ReservationPageComponent implements OnInit {
     let end = endTime.toISOString();
     end = end.substring(0, end.length - 1);
 
-    this.reservationModel.title = "Reservation for " + this.reservationModel.seats;
+    this.reservationModel.title = "Res. for " + this.reservationModel.seats;
     this.reservationModel.start = start;
     this.reservationModel.end = end;
 
