@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  //loggedIn = user.service.isLoggedin()
   selected = true;
   collapsed = false;
   toggleCollapsed(): void {
@@ -17,6 +16,15 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  isLoggedIn() {
+    return sessionStorage.getItem('loggedIn');
+  }
+
+  logout() {
+    sessionStorage.removeItem('loggedIn');
+    sessionStorage.removeItem('user');
   }
 
 }
