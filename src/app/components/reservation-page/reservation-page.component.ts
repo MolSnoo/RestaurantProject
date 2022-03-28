@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CalendarOptions } from '@fullcalendar/angular';
 import { Reservation } from 'src/app/classes/reservation';
 import { ReservationService } from 'src/app/services/reservation.service';
@@ -21,7 +22,7 @@ export class ReservationPageComponent implements OnInit {
   date: string = "";
   reservationModel = new Reservation("", "", "", 1, 0);
 
-  constructor(private reservationService: ReservationService) { }
+  constructor(private router: Router, private reservationService: ReservationService) { }
 
   ngOnInit(): void {
     let userId = sessionStorage.getItem("user");
@@ -40,6 +41,7 @@ export class ReservationPageComponent implements OnInit {
         this.events.push({ id: -1 });
       });
     }
+    else this.router.navigate(['/login']);
   }
 
   handleDateClick(arg: any) {
