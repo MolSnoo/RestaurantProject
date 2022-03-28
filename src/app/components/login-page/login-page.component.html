@@ -1,5 +1,6 @@
 <main class="form-signin">
   <form>
+    <div class="d-flex justify-content-center py-3" style="color:red" *ngIf="display">Incorrect email or password</div>
     <h1 class="h3 mb-3 fw-normal" class="d-flex justify-content-center py-3"> Login</h1>
     <form #loginForm="ngForm" (submit)="onFormSubmit()">
     <div class="form-floating">

@@ -1,3 +1,4 @@
+import { HtmlParser } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/classes/user';
@@ -17,6 +18,8 @@ export class LoginPageComponent implements OnInit {
 
   userModel = new User("", "", "", "", "", null, "", "", null);
 
+  display = false;
+
   onFormSubmit() {
     this.userService.loginUser(this.userModel).subscribe(
       response => {
@@ -26,7 +29,9 @@ export class LoginPageComponent implements OnInit {
         }
         // Failed to find a user account.
         else {
-          // TODO: Show an error message
+          this.display = true;
+          //innerHtml("<span style=\"color:red\">Incorrect email or password.</span>");
+          //<span style=\"color:red\ ">Incorrect email or password.</span>;
         }
       }
     );
